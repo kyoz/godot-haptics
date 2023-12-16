@@ -1,0 +1,10 @@
+# Godot 4+ specific ignores
+.godot/
+
+.import/
+android
+
+# iOS exported project
+exported/
+ios/plugins/*
+!ios/plugins/dummy

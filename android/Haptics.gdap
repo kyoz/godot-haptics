@@ -1,0 +1,11 @@
+[config]
+
+name="Haptics"
+binary_type="local"
+binary="haptics-release.aar"
+
+[dependencies]
+
+local=[]
+remote=[]
+custom_maven_repos=[]

@@ -1,0 +1,17 @@
+[config]
+name="Haptics"
+binary="haptics.a"
+
+initialization="register_haptics_types"
+deinitialization="unregister_haptics_types"
+
+[dependencies]
+linked=[]
+embedded=[]
+system=[]
+
+capabilities=[]
+
+files=[]
+
+[plist]

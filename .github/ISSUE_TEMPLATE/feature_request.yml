@@ -1,0 +1,15 @@
+name: Feature request
+description: Suggest an idea or request a new feature
+body:
+
+- type: textarea
+  attributes:
+    label: What feature or improvement would you like to have?
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Additional context
+    description: |
+      Including screenshots or an example will help contributors implement it more faster.

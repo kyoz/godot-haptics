@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgd267qp14jml"]
+
+[ext_resource type="Script" path="res://Main.gd" id="2"]
+
+[node name="Main" type="Node"]
+script = ExtResource("2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Center" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/Center"]
+layout_mode = 2
+
+[node name="LightBtn" type="Button" parent="CanvasLayer/Center/VBox"]
+layout_mode = 2
+text = "Light"
+
+[node name="MediumBtn" type="Button" parent="CanvasLayer/Center/VBox"]
+layout_mode = 2
+text = "Medium"
+
+[node name="HeavyBtn" type="Button" parent="CanvasLayer/Center/VBox"]
+layout_mode = 2
+text = "Heavy"
+
+[connection signal="pressed" from="CanvasLayer/Center/VBox/LightBtn" to="." method="_on_LightBtn_pressed"]
+[connection signal="pressed" from="CanvasLayer/Center/VBox/MediumBtn" to="." method="_on_MediumBtn_pressed"]
+[connection signal="pressed" from="CanvasLayer/Center/VBox/HeavyBtn" to="." method="_on_HeavyBtn_pressed"]

@@ -1,0 +1,65 @@
+name: Release Plugin
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build-android:
+    name: Building for Android
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: actions/checkout@v3
+    
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'gradle'
+      
+      - name: Compile android plugins
+        run: |
+          ./scripts/android/release.sh
+          ls -l .release/android
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: plugins
+          path: .release/android/*.zip
+          retention-days: 4
+          if-no-files-found: error
+
+  build-ios:
+    name: Building for iOS
+    runs-on: "macos-latest"
+
+    steps:
+      - uses: actions/checkout@v3
+    
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+          architecture: 'x64'
+
+      - name: Configuring Python
+        run: |
+          python -c "import sys; print(sys.version)"
+          python -m pip install scons
+          python --version
+          scons --version
+
+      - name: Compile ios plugins
+        run: |
+          ./scripts/ios/release.sh
+          ls -l .release/ios
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: plugins
+          path: .release/ios/*.zip
+          retention-days: 4
+          if-no-files-found: error

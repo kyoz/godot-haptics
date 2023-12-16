@@ -1,0 +1,55 @@
+name: Bug report
+description: Report a bug of the plugin
+labels: bug
+body:
+
+- type: input
+  attributes:
+    label: Godot version
+    placeholder: '3.5'  
+    description: Specify the Godot version you used to build your app/game
+  validations:
+    required: true
+
+- type: input
+  attributes:
+    label: Plugin version
+    placeholder: 'v1.0.0'
+    description: |
+      The plugin version you are using
+  validations:
+    required: true
+
+- type: input
+  attributes:
+    label: Phone information
+    placeholder: 'Google Pixel 7 - Android 12'
+    description: |
+      Your phone information (Modal, OS version...)
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Issue description
+    description: |
+      Describe your issue briefly. What doesn't work, and how do you expect it to work instead?
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Steps to reproduce
+    placeholder: |
+      1. Go to '...'
+      2. Click on '...'
+    description: |
+      List of steps or sample code that reproduces the issue.
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Additional context
+    description: |
+      Including screenshots or a minimal reproduction project can greatly speed up your issue's resolution.
