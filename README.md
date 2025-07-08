@@ -53,6 +53,8 @@ Download the [android plugin](https://github.com/kyoz/godot-haptics/releases) (m
 
 Enable `Haptics` plugin in your android export preset
 
+Enable `Vibrate` permission.
+
 *Note*: You must [use gradle build](https://docs.godotengine.org/en/stable/tutorials/export/android_gradle_build.html) for Android to use plugins.
 
 ## iOS
