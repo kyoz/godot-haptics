@@ -25,9 +25,9 @@ jobs:
           ./scripts/android/release.sh
           ls -l .release/android
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
-          name: plugins
+          name: android-plugins
           path: .release/android/*.zip
           retention-days: 4
           if-no-files-found: error
@@ -57,9 +57,10 @@ jobs:
           ./scripts/ios/release.sh
           ls -l .release/ios
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
-          name: plugins
+          name: ios-plugins
           path: .release/ios/*.zip
           retention-days: 4
           if-no-files-found: error
+

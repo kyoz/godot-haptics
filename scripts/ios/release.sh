@@ -55,3 +55,4 @@ for version in "${BUILD_VERSIONS[@]}"; do
 
     mv $BUILDED_FOLDER/$PLUGIN.zip $RELEASE_FOLDER/ios-template-${version}.zip
 done
+

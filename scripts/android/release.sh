@@ -40,3 +40,4 @@ for version in "${BUILD_VERSIONS[@]}"; do
         $AAR_OUTPUT_PATH/${PLUGIN_NAME}-release.aar \
         android/${GDAP_FILE}
 done
+

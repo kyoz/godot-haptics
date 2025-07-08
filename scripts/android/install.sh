@@ -7,7 +7,7 @@ CACHE_DIR=${ANDROID_CACHE_DIR}
 SUPPORT_VERSIONS=(${ANDROID_TEMPLATES[@]})
 VERSION=$([ ! -z "$1" ] && echo $1 || echo ${DEFAULT_ANDROID_TEMPLATE})
 
-GODOT_AAR_URL="https://downloads.tuxfamily.org/godotengine/"
+GODOT_AAR_URL="https://github.com/kyoz/godot-android-release-libs/releases/download/v1.0.0"
 
 # Create .cache folder if not existed
 if [ ! -d "${CACHE_DIR}" ]; then
@@ -28,5 +28,8 @@ if test -f "${CACHE_DIR}/${AAR_FILE}"; then
     echo "- Downloaded android template version ${VERSION} (cached)"
 else
     echo "- Downloading android template version ${VERSION}..."
-    wget -P "${CACHE_DIR}" "${GODOT_AAR_URL}/${VERSION}/${AAR_FILE}"
+    #wget -P "${CACHE_DIR}" "${GODOT_AAR_URL}/${VERSION}/${AAR_FILE}"
+    wget -P "${CACHE_DIR}" "${GODOT_AAR_URL}/${AAR_FILE}"
 fi
+
+
